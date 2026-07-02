@@ -5,7 +5,7 @@ import { FAQ } from "@/components/site/FAQ";
 import { CTA } from "@/components/site/CTA";
 import { LinkButton } from "@/components/site/Button";
 import { CaseStudyCard } from "@/components/site/CaseStudyCard";
-import { cases, company, faqs, products } from "@/lib/site-data";
+import { cases, company, faqs, products, type Product } from "@/lib/site-data";
 import { CheckCircle2 } from "lucide-react";
 
 export const Route = createFileRoute("/products/$slug")({
