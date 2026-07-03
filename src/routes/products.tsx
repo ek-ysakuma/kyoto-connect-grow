@@ -11,7 +11,7 @@ export const Route = createFileRoute("/products")({
       {
         name: "description",
         content:
-          "京西電機の標準製品と受託開発ラインアップ。産業用コントローラ、センサユニット、カスタム基板など。",
+          "文字付回転灯、回転灯マスキングプレート、小型LEDライト KTC-L002、車両用ワイヤーハーネス、配送車 鍵管理BOX、バーインボード実装まで、京成電子の製品ラインアップをご紹介します。",
       },
       { property: "og:title", content: `製品一覧 | ${company.name}` },
       { property: "og:url", content: "/products" },

@@ -83,9 +83,9 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-const siteTitle = `${company.name} | 電子機器の設計・開発・製造・OEM/ODM`;
+const siteTitle = `${company.name} | 回転灯安全報知システム・LED照明・電子基板・ハーネス`;
 const siteDescription =
-  "京西電機は電子機器の設計・開発・製造・OEM/ODMを行うBtoBメーカーです。試作から量産、長期保守まで一貫対応。設備メーカー・インフラ企業様の開発課題を解決します。";
+  "株式会社京成電子は、回転灯安全報知システム、小型LED照明、車両用ワイヤーハーネス、バーインボード実装を手がける電子機器メーカーです。1967年創業、横浜・戸塚から社会の安全を支えます。";
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
