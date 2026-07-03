@@ -55,7 +55,7 @@ function Careers() {
             <div className="rounded-xl overflow-hidden">
               <img
                 src={factory}
-                alt="京西電機の量産工場フロアで働く現場スタッフ"
+                alt="京成電子の製造現場で作業する現場スタッフ"
                 width={1600}
                 height={1024}
                 loading="lazy"
