@@ -71,7 +71,7 @@ function Technology() {
           <div className="rounded-xl overflow-hidden mb-16">
             <img
               src={technology}
-              alt="京西電機の技術ラボでオシロスコープを用いて回路の評価を行うエンジニア"
+              alt="京成電子の技術現場でオシロスコープを用いて回路の評価を行うエンジニア"
               width={1600}
               height={1024}
               loading="lazy"
