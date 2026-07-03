@@ -103,15 +103,15 @@ function Technology() {
       <section className="section-y bg-surface">
         <div className="container-x">
           <SectionTitle
-            eyebrow="Quality"
-            title="品質を支える体制"
-            description="ISO 9001に基づく品質マネジメントと、社内評価設備で製品品質を保証します。"
+            eyebrow="Patents & Partners"
+            title="独自技術と連携ネットワーク"
+            description="自社の特許技術と、業界パートナーとの連携で、確かな品質と施工力をお届けします。"
           />
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {[
-              { k: "ISO 9001", v: "品質マネジメントシステム認証取得" },
-              { k: "ISO 14001", v: "環境マネジメントシステム認証取得" },
-              { k: "自社評価設備", v: "EMC・恒温槽・振動試験機を完備" },
+              { k: "特許 第4868237号", v: "LED警告灯（2011年11月取得）" },
+              { k: "特許 第4911747号", v: "発光ダイオード駆動回路（2012年1月取得）" },
+              { k: "パートナー", v: "KCI／電材ランド／ティーネットジャパン／いすゞ車体／市光工業 各社様" },
             ].map((c) => (
               <div key={c.k} className="bg-card border border-border rounded-xl p-8">
                 <div className="font-display text-xl font-bold text-primary mb-2">
