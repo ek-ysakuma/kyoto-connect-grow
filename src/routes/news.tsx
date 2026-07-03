@@ -11,7 +11,7 @@ export const Route = createFileRoute("/news")({
       {
         name: "description",
         content:
-          "京西電機からのお知らせ、新製品情報、展示会情報、採用情報などの最新ニュースをお届けします。",
+          "京成電子からのお知らせ、新製品情報、展示会情報、特許情報などの最新ニュースをお届けします。",
       },
       { property: "og:title", content: `NEWS・お知らせ | ${company.name}` },
       { property: "og:url", content: "/news" },
