@@ -82,8 +82,8 @@ function Careers() {
       <section className="section-y bg-surface">
         <div className="container-x">
           <SectionTitle
-            eyebrow="Why Kyosei"
-            title="京西電機で働く4つの魅力"
+            eyebrow="Why Keisei"
+            title="京成電子で働く4つの魅力"
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((v) => (
