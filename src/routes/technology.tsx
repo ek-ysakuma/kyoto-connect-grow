@@ -13,7 +13,7 @@ export const Route = createFileRoute("/technology")({
       {
         name: "description",
         content:
-          "アナログ/デジタル回路設計、組込ソフトウェア、産業通信、EMC設計まで。京西電機の技術基盤をご紹介します。",
+          "LED警告灯・LED駆動回路の特許技術、回転灯システム設計、車両用ハーネス製造、バーインボード実装まで。京成電子の技術基盤をご紹介します。",
       },
       { property: "og:title", content: `技術紹介 | ${company.name}` },
       { property: "og:url", content: "/technology" },
