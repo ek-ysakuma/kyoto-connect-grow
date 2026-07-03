@@ -33,7 +33,7 @@ function Cases() {
       <section className="section-y">
         <div className="container-x">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {[...cases, ...cases].map((c, i) => (
+            {cases.map((c, i) => (
               <CaseStudyCard key={i} {...c} />
             ))}
           </div>
