@@ -14,7 +14,8 @@ export const Route = createFileRoute("/careers")({
       {
         name: "description",
         content:
-          "京西電機の採用情報。電子回路設計、組込ソフト、生産技術など、ものづくりを愛する仲間を募集しています。",
+          "株式会社京成電子の採用情報。LED製品開発、電子基板実装、車両用ハーネス、施工技術など、ものづくりを愛する仲間を募集しています。",
+      
       },
       { property: "og:title", content: `採用情報 | ${company.name}` },
       { property: "og:url", content: "/careers" },
