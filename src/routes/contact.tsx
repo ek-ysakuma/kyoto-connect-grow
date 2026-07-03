@@ -77,10 +77,11 @@ function Contact() {
                         <option value="" disabled>
                           選択してください
                         </option>
-                        <option>製品について</option>
-                        <option>OEM・ODMのご相談</option>
-                        <option>設計・開発のご相談</option>
-                        <option>技術相談</option>
+                        <option>回転灯安全報知システムについて</option>
+                        <option>小型LED照明について</option>
+                        <option>車両用ハーネス／オプション機器について</option>
+                        <option>バーインボード実装について</option>
+                        <option>配送車 鍵管理BOX について</option>
                         <option>採用について</option>
                         <option>その他</option>
                       </select>
