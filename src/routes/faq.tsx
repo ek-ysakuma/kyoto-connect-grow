@@ -11,7 +11,7 @@ export const Route = createFileRoute("/faq")({
       {
         name: "description",
         content:
-          "京西電機へよくいただくご質問と回答。小ロット対応、NDA、開発フロー、長期供給などについて。",
+          "京成電子へよくいただくご質問と回答。回転灯システムの現地調査、LED照明のカスタム対応、車両用ハーネス、バーインボード実装などについて。",
       },
       { property: "og:title", content: `よくあるご質問 | ${company.name}` },
       { property: "og:url", content: "/faq" },
