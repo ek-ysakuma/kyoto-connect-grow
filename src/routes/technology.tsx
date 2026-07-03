@@ -13,7 +13,7 @@ export const Route = createFileRoute("/technology")({
       {
         name: "description",
         content:
-          "アナログ/デジタル回路設計、組込ソフトウェア、産業通信、EMC設計まで。京西電機の技術基盤をご紹介します。",
+          "LED警告灯・LED駆動回路の特許技術、回転灯システム設計、車両用ハーネス製造、バーインボード実装まで。京成電子の技術基盤をご紹介します。",
       },
       { property: "og:title", content: `技術紹介 | ${company.name}` },
       { property: "og:url", content: "/technology" },
@@ -25,34 +25,34 @@ export const Route = createFileRoute("/technology")({
 
 const techs = [
   {
-    Icon: Cpu,
-    title: "回路設計",
-    desc: "アナログ・デジタル・ミックスド信号回路の設計。低ノイズ・低消費電力設計まで対応。",
-  },
-  {
-    Icon: Code2,
-    title: "組込ソフトウェア",
-    desc: "RTOS、組込Linux、ベアメタルまで。産業用途に求められる堅牢性を担保します。",
-  },
-  {
-    Icon: Radio,
-    title: "産業通信",
-    desc: "Ethernet/IP、Modbus、CAN、RS-485、無線通信（Wi-SUN, LoRa等）に対応。",
+    Icon: ShieldCheck,
+    title: "回転灯安全報知システム",
+    desc: "センサー・制御盤・回転灯を組み合わせた駐車場向けの安全報知システム設計。KCI社／電材ランド様と連携し、パトライト社・日恵製作所社製回転灯を採用しています。",
   },
   {
     Icon: Zap,
-    title: "電源設計",
-    desc: "産業機器向け電源設計、絶縁設計、突入電流対策など、実装レベルの経験があります。",
+    title: "LED照明・LED警告灯",
+    desc: "LED警告灯（特許第4868237号）・発光ダイオード駆動回路（特許第4911747号）を軸に、小型LED照明 KTC-L002 などを自社設計・自社製造しています。",
   },
   {
-    Icon: ShieldCheck,
-    title: "EMC・信頼性",
-    desc: "初期段階からEMC・信頼性を考慮した設計を行い、認証取得までサポートします。",
+    Icon: Cpu,
+    title: "回路設計・製品開発",
+    desc: "通信機器の組立・配線から発展した回路設計技術。用途に応じてLEDや制御回路、機能部品を組合せ、低コストで付加価値の高い製品を実現します。",
+  },
+  {
+    Icon: Code2,
+    title: "バーインボード実装",
+    desc: "半導体評価用バーインボードの部品実装を1998年から受託。半導体メーカー様の評価工程を支える、高信頼のはんだ付け・実装品質を提供します。",
+  },
+  {
+    Icon: Radio,
+    title: "車両用ハーネス・車載機器",
+    desc: "トラック向けワイヤーハーネス、パーキングアラーム、融雪装置部品、隊名標識灯、コーナーポール灯など、人と車の安全を支える車両用オプションの設計・製造。",
   },
   {
     Icon: Ruler,
-    title: "機構・筐体",
-    desc: "板金・切削・樹脂成形筐体まで、電気設計と連動した機構設計を実施します。",
+    title: "現地施工・電気工事",
+    desc: "回転灯システムは、現地調査・仕様決定・据付工事・電気工事までワンストップ。ネット販売品や他メーカー機器の設置ご相談も承ります。",
   },
 ];
 
@@ -71,7 +71,7 @@ function Technology() {
           <div className="rounded-xl overflow-hidden mb-16">
             <img
               src={technology}
-              alt="京西電機の技術ラボでオシロスコープを用いて回路の評価を行うエンジニア"
+              alt="京成電子の技術現場でオシロスコープを用いて回路の評価を行うエンジニア"
               width={1600}
               height={1024}
               loading="lazy"
@@ -103,15 +103,15 @@ function Technology() {
       <section className="section-y bg-surface">
         <div className="container-x">
           <SectionTitle
-            eyebrow="Quality"
-            title="品質を支える体制"
-            description="ISO 9001に基づく品質マネジメントと、社内評価設備で製品品質を保証します。"
+            eyebrow="Patents & Partners"
+            title="独自技術と連携ネットワーク"
+            description="自社の特許技術と、業界パートナーとの連携で、確かな品質と施工力をお届けします。"
           />
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {[
-              { k: "ISO 9001", v: "品質マネジメントシステム認証取得" },
-              { k: "ISO 14001", v: "環境マネジメントシステム認証取得" },
-              { k: "自社評価設備", v: "EMC・恒温槽・振動試験機を完備" },
+              { k: "特許 第4868237号", v: "LED警告灯（2011年11月取得）" },
+              { k: "特許 第4911747号", v: "発光ダイオード駆動回路（2012年1月取得）" },
+              { k: "パートナー", v: "KCI／電材ランド／ティーネットジャパン／いすゞ車体／市光工業 各社様" },
             ].map((c) => (
               <div key={c.k} className="bg-card border border-border rounded-xl p-8">
                 <div className="font-display text-xl font-bold text-primary mb-2">

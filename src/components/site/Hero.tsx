@@ -18,21 +18,21 @@ export function Hero() {
           <div className="lg:col-span-6 order-2 lg:order-1">
             <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-6">
               <span className="h-px w-8 bg-primary" aria-hidden />
-              Electronics Engineering Partner
+              Safety Signal & LED Engineering
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-foreground leading-[1.25] tracking-tight">
-              設計から量産まで、
+              光と音と文字で、
               <br />
-              電子機器を
-              <span className="text-primary">一貫して。</span>
+              現場の安全を
+              <span className="text-primary">見える化する。</span>
             </h1>
             <p className="mt-6 md:mt-8 text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl">
-              京西電機は、40年にわたり産業用電子機器の設計・開発・製造を手がけてきた技術パートナーです。
-              OEM・ODM、試作から量産、長期保守まで。貴社のものづくりをワンストップで支えます。
+              株式会社京成電子は、回転灯安全報知システム、小型LED照明、車両用ワイヤーハーネス、バーインボード実装を手がける横浜・戸塚の電子機器メーカーです。
+              1967年創業、設計から施工までワンストップでお客様の安全課題を解決します。
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <LinkButton to="/contact" size="lg" withArrow>
-                無料で技術相談する
+                無料で相談する
               </LinkButton>
               <LinkButton to="/services" variant="outline" size="lg">
                 事業内容を見る
@@ -40,9 +40,9 @@ export function Hero() {
             </div>
             <dl className="mt-12 grid grid-cols-3 gap-6 max-w-lg border-t border-border pt-8">
               {[
-                { k: "設計実績", v: "40+", u: "年" },
-                { k: "取引企業", v: "500+", u: "社" },
-                { k: "長期供給", v: "10+", u: "年" },
+                { k: "創業", v: "1967", u: "年" },
+                { k: "取得特許", v: "2", u: "件" },
+                { k: "受託開始", v: "1998", u: "年〜" },
               ].map((s) => (
                 <div key={s.k}>
                   <dd className="font-display text-3xl md:text-4xl font-bold text-primary tabular-nums">
@@ -60,7 +60,7 @@ export function Hero() {
               <div className="aspect-[4/5] md:aspect-[5/6] rounded-2xl overflow-hidden bg-surface shadow-[0_20px_60px_-20px_rgb(0_91_172_/_0.35)]">
                 <img
                   src={heroImg}
-                  alt="精密な電子基板のクローズアップ。京西電機が手がける電子機器設計・製造の技術力を象徴する一枚。"
+                  alt="京成電子が手がける回転灯安全報知システム／LED基板の技術を象徴する電子基板のクローズアップ。"
                   width={1920}
                   height={1280}
                   fetchPriority="high"
@@ -72,12 +72,12 @@ export function Hero() {
                 aria-hidden
               >
                 <div className="grid place-items-center size-10 rounded-full bg-accent text-accent-foreground font-display font-bold text-sm">
-                  ISO
+                  ⚙
                 </div>
                 <div>
-                  <div className="text-xs text-muted-foreground">品質マネジメント</div>
+                  <div className="text-xs text-muted-foreground">独自技術</div>
                   <div className="text-sm font-bold text-foreground font-display">
-                    ISO 9001 認証取得
+                    LED警告灯 特許取得
                   </div>
                 </div>
               </div>

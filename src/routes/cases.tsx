@@ -11,7 +11,7 @@ export const Route = createFileRoute("/cases")({
       {
         name: "description",
         content:
-          "京西電機の導入事例。製造業、インフラ、設備メーカー向けの開発・OEM・量産事例をご紹介します。",
+          "京成電子の導入事例。駐車場向け回転灯安全報知システム、車両用ハーネス、大型LED照明、バーインボード実装などの事例をご紹介します。",
       },
       { property: "og:title", content: `導入事例 | ${company.name}` },
       { property: "og:url", content: "/cases" },
@@ -33,7 +33,7 @@ function Cases() {
       <section className="section-y">
         <div className="container-x">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {[...cases, ...cases].map((c, i) => (
+            {cases.map((c, i) => (
               <CaseStudyCard key={i} {...c} />
             ))}
           </div>

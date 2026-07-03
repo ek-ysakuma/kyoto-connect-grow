@@ -48,13 +48,13 @@ export function Header() {
           onClick={() => setOpen(false)}
         >
           <span className="grid place-items-center size-9 rounded-md bg-primary text-primary-foreground font-display font-bold text-sm">
-            KX
+            KD
           </span>
           <span className="flex flex-col leading-tight">
             <span className="text-[10px] tracking-[0.15em] text-muted-foreground font-semibold">
-              KYOSEI DENKI
+              KEISEI DENSHI
             </span>
-            <span className="text-sm font-bold text-foreground">株式会社京西電機</span>
+            <span className="text-sm font-bold text-foreground">株式会社京成電子</span>
           </span>
         </Link>
 

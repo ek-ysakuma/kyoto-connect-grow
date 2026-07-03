@@ -30,8 +30,8 @@ function Home() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16">
             <SectionTitle
               eyebrow="Services"
-              title={<>電子機器のすべてを、<br className="hidden md:block" />ワンストップで。</>}
-              description="回路設計から量産・保守まで、6つの領域で貴社の開発を支援します。"
+              title={<>安全と省エネを、<br className="hidden md:block" />光と電子で支える。</>}
+              description="回転灯安全報知システム、小型LED照明、車両用ハーネス、バーインボード実装の4本柱を中心に、6つの領域で事業を展開しています。"
               className="mb-0"
             />
             <LinkButton to="/services" variant="outline" withArrow>
@@ -50,9 +50,9 @@ function Home() {
       <section className="section-y bg-surface">
         <div className="container-x">
           <SectionTitle
-            eyebrow="Why Kyosei Denki"
-            title="京西電機が選ばれる4つの理由"
-            description="単なる製造委託先ではなく、貴社の技術パートナーとして長期的に伴走します。"
+            eyebrow="Why Keisei Denshi"
+            title="京成電子が選ばれる4つの理由"
+            description="1967年創業。単なる製造委託先ではなく、安全課題を一緒に解決する技術パートナーとして伴走します。"
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {reasons.map((r) => (
@@ -77,7 +77,7 @@ function Home() {
             </LinkButton>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {products.map((p) => (
+            {products.slice(0, 3).map((p) => (
               <ProductCard key={p.slug} product={p} />
             ))}
           </div>
@@ -91,7 +91,7 @@ function Home() {
             <div className="order-2 lg:order-1 rounded-xl overflow-hidden">
               <img
                 src={technology}
-                alt="オシロスコープを操作するエンジニア。京西電機の技術ラボでの評価工程。"
+                alt="オシロスコープを操作するエンジニア。京成電子の設計・評価現場。"
                 width={1600}
                 height={1024}
                 loading="lazy"
@@ -101,16 +101,16 @@ function Home() {
             <div className="order-1 lg:order-2">
               <SectionTitle
                 eyebrow="Technology"
-                title={<>40年培った、<br />ハードとソフトの融合技術。</>}
-                description="アナログ・デジタル回路設計、組込ソフトウェア、通信、電源、機構まで。多分野のエンジニアが在籍し、複合的な技術課題に応えます。"
+                title={<>特許取得の独自技術で、<br />光と電子の応用を広げる。</>}
+                description="LED警告灯・LED駆動回路の特許技術をベースに、回転灯システム／小型LED照明／車両用ハーネス／バーインボード実装まで、幅広い領域で技術を提供します。"
                 className="mb-8"
               />
               <ul className="space-y-4 mb-8">
                 {[
-                  "アナログ/デジタル/ミックスド回路設計",
-                  "組込ソフトウェア（RTOS/Linux）",
-                  "産業用通信プロトコル対応",
-                  "EMC・信頼性試験対応設計",
+                  "LED警告灯（特許第4868237号）",
+                  "発光ダイオード駆動回路（特許第4911747号）",
+                  "回転灯安全報知システムの設計・施工",
+                  "半導体評価用バーインボードの実装",
                 ].map((t) => (
                   <li key={t} className="flex items-start gap-3">
                     <span
@@ -144,7 +144,7 @@ function Home() {
             </LinkButton>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {cases.map((c) => (
+            {cases.slice(0, 3).map((c) => (
               <CaseStudyCard key={c.title} {...c} />
             ))}
           </div>

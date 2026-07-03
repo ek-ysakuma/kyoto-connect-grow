@@ -11,7 +11,7 @@ export const Route = createFileRoute("/news")({
       {
         name: "description",
         content:
-          "京西電機からのお知らせ、新製品情報、展示会情報、採用情報などの最新ニュースをお届けします。",
+          "京成電子からのお知らせ、新製品情報、展示会情報、特許情報などの最新ニュースをお届けします。",
       },
       { property: "og:title", content: `NEWS・お知らせ | ${company.name}` },
       { property: "og:url", content: "/news" },
@@ -27,7 +27,7 @@ function News() {
       <PageHero
         eyebrow="News"
         title="NEWS・お知らせ"
-        description="京西電機からのお知らせをお届けします。"
+        description="京成電子からのお知らせをお届けします。"
         crumbs={[{ label: "ホーム", to: "/" }, { label: "NEWS" }]}
       />
       <section className="section-y">

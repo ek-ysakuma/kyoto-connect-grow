@@ -14,7 +14,8 @@ export const Route = createFileRoute("/careers")({
       {
         name: "description",
         content:
-          "京西電機の採用情報。電子回路設計、組込ソフト、生産技術など、ものづくりを愛する仲間を募集しています。",
+          "株式会社京成電子の採用情報。LED製品開発、電子基板実装、車両用ハーネス、施工技術など、ものづくりを愛する仲間を募集しています。",
+      
       },
       { property: "og:title", content: `採用情報 | ${company.name}` },
       { property: "og:url", content: "/careers" },
@@ -54,7 +55,7 @@ function Careers() {
             <div className="rounded-xl overflow-hidden">
               <img
                 src={factory}
-                alt="京西電機の量産工場フロアで働く現場スタッフ"
+                alt="京成電子の製造現場で作業する現場スタッフ"
                 width={1600}
                 height={1024}
                 loading="lazy"
@@ -81,8 +82,8 @@ function Careers() {
       <section className="section-y bg-surface">
         <div className="container-x">
           <SectionTitle
-            eyebrow="Why Kyosei"
-            title="京西電機で働く4つの魅力"
+            eyebrow="Why Keisei"
+            title="京成電子で働く4つの魅力"
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((v) => (

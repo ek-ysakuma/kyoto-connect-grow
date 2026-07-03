@@ -12,7 +12,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "京西電機へのお問い合わせフォーム。電子機器の設計・開発・OEM・量産のご相談を承ります。営業日翌日までにご返信します。",
+          "株式会社京成電子へのお問い合わせフォーム。回転灯安全報知システム、LED照明、車両用ハーネス、バーインボード実装に関するご相談を承ります。",
       },
       { property: "og:title", content: `お問い合わせ | ${company.name}` },
       { property: "og:url", content: "/contact" },
@@ -77,10 +77,11 @@ function Contact() {
                         <option value="" disabled>
                           選択してください
                         </option>
-                        <option>製品について</option>
-                        <option>OEM・ODMのご相談</option>
-                        <option>設計・開発のご相談</option>
-                        <option>技術相談</option>
+                        <option>回転灯安全報知システムについて</option>
+                        <option>小型LED照明について</option>
+                        <option>車両用ハーネス／オプション機器について</option>
+                        <option>バーインボード実装について</option>
+                        <option>配送車 鍵管理BOX について</option>
                         <option>採用について</option>
                         <option>その他</option>
                       </select>

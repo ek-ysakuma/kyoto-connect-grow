@@ -72,7 +72,7 @@ function Privacy() {
           <div className="mt-16 pt-8 border-t border-border text-sm text-muted-foreground">
             制定日：2020年4月1日 / 最終改定：2026年4月1日
             <br />
-            {company.name}　代表取締役　京西 太郎
+            {company.name}
           </div>
         </div>
       </section>
