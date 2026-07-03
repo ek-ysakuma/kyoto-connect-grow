@@ -27,7 +27,7 @@ function News() {
       <PageHero
         eyebrow="News"
         title="NEWS・お知らせ"
-        description="京西電機からのお知らせをお届けします。"
+        description="京成電子からのお知らせをお届けします。"
         crumbs={[{ label: "ホーム", to: "/" }, { label: "NEWS" }]}
       />
       <section className="section-y">
