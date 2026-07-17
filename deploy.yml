@@ -20,8 +20,8 @@ jobs:
         run: npm install
 
       - name: Force Build Web Site 🚀
-        # Lovable(Nitro)用のビルドコマンドを実行します
-        run: npm run build
+        # NITRO_PRESET=github-pages を付与して静的サイトとしてビルドさせます
+        run: NITRO_PRESET=github-pages npm run build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
