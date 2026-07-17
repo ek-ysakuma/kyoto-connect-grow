@@ -19,9 +19,17 @@ jobs:
       - name: Install Dependencies 🔧
         run: npm install
 
-      - name: Direct Vite Build 🚀
-        # Nitroをバイパスし、Vite単体で100%純粋な静的SPAとしてビルドします
-        run: npx vite build
+      - name: Build Static Site 🚀
+        # プリレンダリングを強制し、SSRビルド側のHTMLエラーを回避する環境変数です
+        run: npx vinxi build
+        env:
+          NITRO_PRESET: github-pages
+
+      - name: Move Output to Dist 📂
+        # 生成された静的ファイルを、デプロイアクションが見に行く 'dist' にコピーします
+        run: |
+          mkdir -p dist
+          cp -r .output/public/* dist/
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
