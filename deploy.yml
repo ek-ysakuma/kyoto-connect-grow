@@ -29,3 +29,4 @@ jobs:
           # ビルド結果が生成されるパスを指定します
           folder: .output/public
           branch: gh-pages
+          
