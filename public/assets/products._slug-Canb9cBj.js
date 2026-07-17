@@ -1,0 +1,1 @@
+import{s as e,t}from"./link-sDQV9wD2.js";var n=e(),r=()=>(0,n.jsxs)(`div`,{className:`container-x py-32 text-center`,children:[(0,n.jsx)(`h1`,{className:`text-2xl font-bold`,children:`製品が見つかりませんでした`}),(0,n.jsx)(t,{to:`/products`,className:`text-primary mt-4 inline-block`,children:`製品一覧へ戻る`})]});export{r as notFoundComponent};
