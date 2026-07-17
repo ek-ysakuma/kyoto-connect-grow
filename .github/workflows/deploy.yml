@@ -20,7 +20,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps: deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }} # ← ここをドットに修正しました！
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -30,11 +30,9 @@ jobs:
         run: npm install
 
       - name: Project Standard Build 🚀
-        # プロジェクト本来のコマンドでビルドします
         run: npm run build
 
       - name: Upload Artifact 📦
-        # 前回のログで生成が確定していた「.output/public」をそのままアップロードします
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.output/public'
@@ -42,4 +40,3 @@ jobs:
       - name: Deploy to GitHub Pages 🚀
         id: deployment
         uses: actions/deploy-pages@v4
-        
