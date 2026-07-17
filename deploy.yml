@@ -20,11 +20,14 @@ jobs:
         run: npm install
 
       - name: Force Build Web Site 🚀
-        # NITRO_PRESET=github-pages を付与して静的サイトとしてビルドさせます
         run: NITRO_PRESET=github-pages npm run build
+
+      - name: Copy to Dist for Deployment 📂
+        # 生成された .output/public を、デプロイアクションが欲しがっている dist に丸ごとコピーします
+        run: cp -r .output/public dist
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: .output/public
+          folder: dist
           branch: gh-pages
