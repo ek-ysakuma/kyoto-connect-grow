@@ -20,8 +20,7 @@ jobs:
         run: npm install
 
       - name: Force Build Web Site 🚀
-        # NITRO_PRESET=github-pages を付与して静的サイトとしてビルドさせます
-        run: NITRO_PRESET=github-pages npm run build
+        run: npm run build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
