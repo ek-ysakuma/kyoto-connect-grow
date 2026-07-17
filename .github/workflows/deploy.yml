@@ -5,11 +5,22 @@ on:
     branches:
       - main
 
+# GitHub Pagesへのデプロイに必要な権限を明示的に設定します
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+# 同時に実行されるデプロイをキャンセルし、最新のコミットだけを優先します
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
 
     steps:
@@ -20,10 +31,17 @@ jobs:
         run: npm install
 
       - name: Force Build Web Site 🚀
-        run: npm run build
+        run: NITRO_PRESET=github-pages npm run build
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Setup Pages ⚙️
+        uses: actions/configure-pages@v5
+
+      - name: Upload Artifact 📤
+        # 生成された .output/public フォルダを GitHub Pages 用にパッケージングしてアップロードします
+        uses: actions/upload-pages-artifact@v3
         with:
-          folder: .output/public
-          branch: gh-pages
+          path: '.output/public'
+
+      - name: Deploy to GitHub Pages 🚀
+        id: deployment
+        uses: actions/deploy-pages@v4
