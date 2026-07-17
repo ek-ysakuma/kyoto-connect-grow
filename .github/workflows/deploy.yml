@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Lovableのデフォルトがmain以外（masterなど）なら、そのブランチ名に変えてください
+      - main  # Lovableのデフォルトブランチ名に合わせてください
 
 permissions:
   contents: write
@@ -18,8 +18,9 @@ jobs:
 
       - name: Install and Build 🔧
         run: |
-          npm ci
-          # 型エラーなどをすべて無視して、何が何でもdistフォルダを強制ビルドするコマンドです
+          # npm ci から npm install に変更し、package-lock.json がなくてもインストールできるようにします
+          npm install
+          # 型エラーなどをすべて無視して、何が何でもdistフォルダを強制ビルドするコマンド
           npm run build -- --emptyOutDir || npx vite build --emptyOutDir
 
       - name: Deploy 🚀
