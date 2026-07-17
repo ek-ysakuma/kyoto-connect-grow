@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # 💡 もしブランチ名が master の場合は master に書き換えてください
+      - main
 
 permissions:
   contents: write
@@ -20,13 +20,11 @@ jobs:
         run: npm install
 
       - name: Force Build Web Site 🚀
-        # Viteのビルドを実行します
-        run: npx vite build
+        # Lovable(Nitro)用のビルドコマンドを実行します
+        run: npm run build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          # ビルド結果が生成されるパスを指定します
           folder: .output/public
           branch: gh-pages
-          
