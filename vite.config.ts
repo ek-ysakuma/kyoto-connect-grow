@@ -7,13 +7,15 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
-  // Lovableの設定では、vite用のオプションの中に base を記述します
   vite: {
+    // 1. フロントエンド（Vite）のアセット読み込みパスを設定
     base: '/kyoto-connect-grow/',
   },
   tanstackStart: {
-    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // 2. サーバー（Nitro）側のベースパスも明示的に上書きして同期させます
+  nitro: {
+    baseURL: '/kyoto-connect-grow/',
+  }
 });
