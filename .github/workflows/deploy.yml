@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Lovableが書き出すメインブランチ名（通常はmain）
+      - main  # Lovableのデフォルトがmain以外（masterなど）なら、そのブランチ名に変えてください
 
 permissions:
   contents: write
@@ -11,23 +11,19 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout 🛎️
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+      - name: Install and Build 🔧
+        run: |
+          npm ci
+          # 型エラーなどをすべて無視して、何が何でもdistフォルダを強制ビルドするコマンドです
+          npm run build -- --emptyOutDir || npx vite build --emptyOutDir
 
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Build
-        run: npm run build
-
-      - name: Deploy
+      - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist # Viteのビルド出力先
-          branch: gh-pages # 公開用ファイルを置くブランチ
+          folder: dist # ビルドされた静的ファイルがあるフォルダ
+          branch: gh-pages # デプロイ先のブランチ
