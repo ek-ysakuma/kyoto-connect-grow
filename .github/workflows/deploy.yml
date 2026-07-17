@@ -27,23 +27,17 @@ jobs:
       - name: Install Dependencies 🔧
         run: npm install
 
-      - name: Project Standard Build 🚀
+      - name: Project Static SSG Build 🚀
+        # 環境変数を付与してビルドし、SSRではなく全てのページをHTML（静的ファイル）として生成させます
+        env:
+          NITRO_PRESET: github-pages
         run: npm run build
 
-      - name: Debug Folder Structure 🔍
-        # ビルド後にどんなフォルダやファイルができているかログに出力します
-        run: |
-          echo "=== Root Folder ==="
-          ls -la
-          echo "=== .output Folder (if exists) ==="
-          ls -R .output || echo ".output not found"
-          echo "=== dist Folder (if exists) ==="
-          ls -R dist || echo "dist not found"
-
       - name: Upload Artifact 📦
+        # 静的生成された場合は、.output/public の中に index.html 等が生成されます
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.output/public' # 一旦このまま動かします
+          path: '.output/public'
 
       - name: Deploy to GitHub Pages 🚀
         id: deployment
