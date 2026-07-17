@@ -5,13 +5,11 @@ on:
     branches:
       - main
 
-# GitHub Pagesへのデプロイに必要な権限を設定
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# 連続でプッシュされた場合、古いジョブをキャンセルして最新だけを動かす
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -20,7 +18,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }} # ← ここをドットに修正しました！
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -32,10 +30,20 @@ jobs:
       - name: Project Standard Build 🚀
         run: npm run build
 
+      - name: Debug Folder Structure 🔍
+        # ビルド後にどんなフォルダやファイルができているかログに出力します
+        run: |
+          echo "=== Root Folder ==="
+          ls -la
+          echo "=== .output Folder (if exists) ==="
+          ls -R .output || echo ".output not found"
+          echo "=== dist Folder (if exists) ==="
+          ls -R dist || echo "dist not found"
+
       - name: Upload Artifact 📦
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.output/public'
+          path: '.output/public' # 一旦このまま動かします
 
       - name: Deploy to GitHub Pages 🚀
         id: deployment
