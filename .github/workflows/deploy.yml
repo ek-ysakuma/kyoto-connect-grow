@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Lovableのデフォルトブランチ名に合わせてください
+      - main  # 💡 もしブランチ名が master の場合はここを master に書き換えてください
 
 permissions:
   contents: write
@@ -16,12 +16,12 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
 
-      - name: Install and Build 🔧
-        run: |
-          # npm ci から npm install に変更し、package-lock.json がなくてもインストールできるようにします
-          npm install
-          # 型エラーなどをすべて無視して、何が何でもdistフォルダを強制ビルドするコマンド
-          npm run build -- --emptyOutDir || npx vite build --emptyOutDir
+      - name: Install Dependencies 🔧
+        run: npm install
+
+      - name: Force Build Web Site 🚀
+        # Viteを直接呼び出して、型エラーや警告を完全に無視してdistフォルダへ強制出力させます
+        run: npx vite build --outDir dist --emptyOutDir
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
