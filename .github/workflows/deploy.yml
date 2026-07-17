@@ -27,14 +27,16 @@ jobs:
       - name: Install Dependencies 🔧
         run: npm install
 
-      - name: Project Static SSG Build 🚀
-        # 環境変数を付与してビルドし、SSRではなく全てのページをHTML（静的ファイル）として生成させます
+      - name: Project SPA Static Build 🚀
+        # Nitroではなく、Vinxi全体のビルドターゲットを静的（static）に強制します
         env:
-          NITRO_PRESET: github-pages
+          VINXI_SERVER_PRESET: static
+          NITRO_PRESET: static
         run: npm run build
 
       - name: Upload Artifact 📦
-        # 静的生成された場合は、.output/public の中に index.html 等が生成されます
+        # 静的SPAとして出力される一般的なディレクトリを指定します
+        # もしこれでまた出力先が変わる場合は、直前のログで書き出された場所を追います
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.output/public'
