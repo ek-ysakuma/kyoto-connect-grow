@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # 💡 ブランチ名が master の場合は master に書き換えてください
+      - main  # 💡 もしブランチ名が master の場合は master に書き換えてください
 
 permissions:
   contents: write
@@ -20,28 +20,12 @@ jobs:
         run: npm install
 
       - name: Force Build Web Site 🚀
-        run: npx vite build --outDir dist --emptyOutDir
-
-      - name: Find Build Folder 🔍
-        # distまたはbuildフォルダがどこにあるか自動検出して環境変数に格納します
-        id: detect_folder
-        run: |
-          if [ -d "dist" ]; then
-            echo "folder=dist" >> $GITHUB_OUTPUT
-            echo "Found dist folder!"
-          elif [ -d "build" ]; then
-            echo "folder=build" >> $GITHUB_OUTPUT
-            echo "Found build folder!"
-          else
-            # 万が一どちらもない場合は現在のディレクトリ構造をログに出力して強制終了させます
-            echo "Neither dist nor build folder found. Current directory contents:"
-            ls -la
-            exit 1
-          fi
+        # 型チェックなどを無視して強制ビルドを実行します
+        run: npx vite build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          # 自動検出したフォルダ（dist か build）をデプロイ対象にします
-          folder: ${{ steps.detect_folder.outputs.folder }}
+          # ビルド結果が生成される「.output」フォルダを指定します
+          folder: .output
           branch: gh-pages # デプロイ先のブランチ
