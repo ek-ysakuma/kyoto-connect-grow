@@ -27,5 +27,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           # ビルド結果が生成される「.output」フォルダを指定します
-          folder: .output
+          folder: dist
           branch: gh-pages # デプロイ先のブランチ
