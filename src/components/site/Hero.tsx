@@ -57,12 +57,12 @@ export function Hero() {
 
           <div className="lg:col-span-6 order-1 lg:order-2">
             <div className="relative">
-              <div className="aspect-[4/5] md:aspect-[5/6] rounded-2xl overflow-hidden bg-surface shadow-[0_20px_60px_-20px_rgb(0_91_172_/_0.35)] flex items-center justify-center">
+              <div className="rounded-2xl overflow-hidden bg-surface shadow-[0_20px_60px_-20px_rgb(0_91_172_/_0.35)]">
                 <img
                   src={heroImg}
                   alt="京成電子が手がける回転灯安全報知システム／LED基板の技術を象徴する電子基板のクローズアップ。"
                   fetchPriority="high"
-                  className="max-w-full max-h-full w-auto h-auto object-contain"
+                  className="block w-full h-auto"
                 />
               </div>
               <div
