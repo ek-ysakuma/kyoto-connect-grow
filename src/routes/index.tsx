@@ -88,14 +88,12 @@ function Home() {
       <section className="section-y bg-surface">
         <div className="container-x">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="order-2 lg:order-1 rounded-xl overflow-hidden">
+            <div className="order-2 lg:order-1 rounded-xl overflow-hidden bg-surface aspect-[16/10] flex items-center justify-center">
               <img
                 src={technology}
                 alt="オシロスコープを操作するエンジニア。京成電子の設計・評価現場。"
-                width={1600}
-                height={1024}
                 loading="lazy"
-                className="w-full h-auto object-cover"
+                className="max-w-full max-h-full w-auto h-auto object-contain"
               />
             </div>
             <div className="order-1 lg:order-2">

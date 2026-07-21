@@ -9,14 +9,12 @@ export function ProductCard({ product }: { product: Product }) {
       params={{ slug: product.slug }}
       className="group block bg-card border border-border rounded-xl overflow-hidden transition-all duration-300 hover:border-primary/40 hover:shadow-[0_4px_8px_rgb(0_91_172_/_0.08),_0_12px_32px_rgb(15_23_42_/_0.10)] hover:-translate-y-1 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
     >
-      <div className="aspect-[4/3] overflow-hidden bg-surface">
+      <div className="aspect-[4/3] overflow-hidden bg-surface flex items-center justify-center">
         <img
           src={product.image}
           alt={product.name}
-          width={1024}
-          height={768}
           loading="lazy"
-          className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="max-w-full max-h-full w-auto h-auto object-contain transition-transform duration-500 group-hover:scale-105"
         />
       </div>
       <div className="p-6 md:p-8">
