@@ -8,12 +8,12 @@ type Props = {
 export function CaseStudyCard({ industry, title, result, image }: Props) {
   return (
     <article className="group bg-card border border-border rounded-xl overflow-hidden transition-all duration-300 hover:shadow-[0_4px_8px_rgb(0_91_172_/_0.08),_0_12px_32px_rgb(15_23_42_/_0.10)] hover:-translate-y-1">
-      <div className="aspect-[16/10] overflow-hidden bg-surface flex items-center justify-center">
+      <div className="overflow-hidden bg-surface">
         <img
           src={image}
           alt=""
           loading="lazy"
-          className="max-w-full max-h-full w-auto h-auto object-contain transition-transform duration-500 group-hover:scale-105"
+          className="block w-full h-auto transition-transform duration-500 group-hover:scale-105"
         />
       </div>
       <div className="p-6 md:p-8">
