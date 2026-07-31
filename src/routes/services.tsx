@@ -3,6 +3,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { SectionTitle } from "@/components/site/SectionTitle";
 import { FeatureCard } from "@/components/site/FeatureCard";
 import { CTA } from "@/components/site/CTA";
+import { LinkButton } from "@/components/site/Button";
 import { services, company } from "@/lib/site-data";
 import { CheckCircle2 } from "lucide-react";
 
@@ -64,7 +65,6 @@ function Services() {
       </section>
 
       <section className="section-y bg-surface">
-
         <div className="container-x">
           <SectionTitle
             eyebrow="6 Services"
@@ -79,7 +79,7 @@ function Services() {
         </div>
       </section>
 
-      <section className="section-y bg-surface">
+      <section className="section-y">
         <div className="container-x">
           <SectionTitle
             eyebrow="Workflow"
