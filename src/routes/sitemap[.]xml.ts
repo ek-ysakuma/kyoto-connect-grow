@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
+import { products } from "@/lib/site-data";
 
 const BASE_URL = "";
 
@@ -17,10 +18,13 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/", changefreq: "weekly", priority: "1.0" },
           { path: "/about", changefreq: "monthly", priority: "0.8" },
           { path: "/services", changefreq: "monthly", priority: "0.9" },
+          { path: "/kaiten", changefreq: "monthly", priority: "0.9" },
           { path: "/products", changefreq: "monthly", priority: "0.9" },
-          { path: "/products/kx-controller-1000", changefreq: "monthly", priority: "0.7" },
-          { path: "/products/kx-sensor-unit-200", changefreq: "monthly", priority: "0.7" },
-          { path: "/products/kx-board-custom", changefreq: "monthly", priority: "0.7" },
+          ...products.map((p) => ({
+            path: `/products/${p.slug}`,
+            changefreq: "monthly" as const,
+            priority: "0.7",
+          })),
           { path: "/technology", changefreq: "monthly", priority: "0.8" },
           { path: "/cases", changefreq: "monthly", priority: "0.8" },
           { path: "/faq", changefreq: "monthly", priority: "0.6" },
