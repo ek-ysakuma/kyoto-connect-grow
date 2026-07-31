@@ -15,6 +15,7 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as NewsRouteImport } from './routes/news'
+import { Route as KaitenRouteImport } from './routes/kaiten'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CasesRouteImport } from './routes/cases'
@@ -51,6 +52,11 @@ const PrivacyRoute = PrivacyRouteImport.update({
 const NewsRoute = NewsRouteImport.update({
   id: '/news',
   path: '/news',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KaitenRoute = KaitenRouteImport.update({
+  id: '/kaiten',
+  path: '/kaiten',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqRoute = FaqRouteImport.update({
@@ -96,6 +102,7 @@ export interface FileRoutesByFullPath {
   '/cases': typeof CasesRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/kaiten': typeof KaitenRoute
   '/news': typeof NewsRoute
   '/privacy': typeof PrivacyRoute
   '/products': typeof ProductsRouteWithChildren
@@ -111,6 +118,7 @@ export interface FileRoutesByTo {
   '/cases': typeof CasesRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/kaiten': typeof KaitenRoute
   '/news': typeof NewsRoute
   '/privacy': typeof PrivacyRoute
   '/products': typeof ProductsRouteWithChildren
@@ -127,6 +135,7 @@ export interface FileRoutesById {
   '/cases': typeof CasesRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/kaiten': typeof KaitenRoute
   '/news': typeof NewsRoute
   '/privacy': typeof PrivacyRoute
   '/products': typeof ProductsRouteWithChildren
@@ -144,6 +153,7 @@ export interface FileRouteTypes {
     | '/cases'
     | '/contact'
     | '/faq'
+    | '/kaiten'
     | '/news'
     | '/privacy'
     | '/products'
@@ -159,6 +169,7 @@ export interface FileRouteTypes {
     | '/cases'
     | '/contact'
     | '/faq'
+    | '/kaiten'
     | '/news'
     | '/privacy'
     | '/products'
@@ -174,6 +185,7 @@ export interface FileRouteTypes {
     | '/cases'
     | '/contact'
     | '/faq'
+    | '/kaiten'
     | '/news'
     | '/privacy'
     | '/products'
@@ -190,6 +202,7 @@ export interface RootRouteChildren {
   CasesRoute: typeof CasesRoute
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
+  KaitenRoute: typeof KaitenRoute
   NewsRoute: typeof NewsRoute
   PrivacyRoute: typeof PrivacyRoute
   ProductsRoute: typeof ProductsRouteWithChildren
@@ -240,6 +253,13 @@ declare module '@tanstack/react-router' {
       path: '/news'
       fullPath: '/news'
       preLoaderRoute: typeof NewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kaiten': {
+      id: '/kaiten'
+      path: '/kaiten'
+      fullPath: '/kaiten'
+      preLoaderRoute: typeof KaitenRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faq': {
@@ -313,6 +333,7 @@ const rootRouteChildren: RootRouteChildren = {
   CasesRoute: CasesRoute,
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
+  KaitenRoute: KaitenRoute,
   NewsRoute: NewsRoute,
   PrivacyRoute: PrivacyRoute,
   ProductsRoute: ProductsRouteWithChildren,
@@ -323,13 +344,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
