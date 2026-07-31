@@ -3,6 +3,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { SectionTitle } from "@/components/site/SectionTitle";
 import { FeatureCard } from "@/components/site/FeatureCard";
 import { CTA } from "@/components/site/CTA";
+import { LinkButton } from "@/components/site/Button";
 import { services, company } from "@/lib/site-data";
 import { CheckCircle2 } from "lucide-react";
 
@@ -44,6 +45,27 @@ function Services() {
 
       <section className="section-y">
         <div className="container-x">
+          <div className="rounded-xl border border-primary/30 bg-primary/5 p-8 md:p-12 grid lg:grid-cols-[1fr_auto] gap-8 items-center">
+            <div>
+              <div className="text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-4">
+                Featured
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                回転灯 安全報知システム — 駐車場出入口の事故を「光・音・文字」で防ぐ
+              </h2>
+              <p className="text-muted-foreground leading-relaxed max-w-2xl">
+                年間100件以上のお問い合わせ。現地調査から据付・電気工事までワンストップ。機器のみの販売は全国対応、工事付きは関東・東海で実績多数です。
+              </p>
+            </div>
+            <LinkButton to="/kaiten" size="lg" withArrow>
+              システム詳細を見る
+            </LinkButton>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-y bg-surface">
+        <div className="container-x">
           <SectionTitle
             eyebrow="6 Services"
             title="6つの事業領域"
@@ -57,7 +79,7 @@ function Services() {
         </div>
       </section>
 
-      <section className="section-y bg-surface">
+      <section className="section-y">
         <div className="container-x">
           <SectionTitle
             eyebrow="Workflow"

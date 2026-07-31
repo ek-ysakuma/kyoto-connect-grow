@@ -6,6 +6,7 @@ const columns = [
     title: "事業",
     links: [
       { to: "/services", label: "事業内容" },
+      { to: "/kaiten", label: "回転灯 安全報知システム" },
       { to: "/technology", label: "技術紹介" },
       { to: "/products", label: "製品一覧" },
       { to: "/cases", label: "導入事例" },

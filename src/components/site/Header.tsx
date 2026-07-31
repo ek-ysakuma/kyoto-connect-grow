@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 const nav = [
   { to: "/about", label: "会社案内" },
   { to: "/services", label: "事業内容" },
+  { to: "/kaiten", label: "回転灯システム" },
   { to: "/products", label: "製品一覧" },
   { to: "/technology", label: "技術紹介" },
   { to: "/cases", label: "導入事例" },
