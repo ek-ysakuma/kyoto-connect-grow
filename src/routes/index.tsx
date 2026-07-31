@@ -46,6 +46,29 @@ function Home() {
         </div>
       </section>
 
+      {/* 回転灯 安全報知システム 訴求 */}
+      <section className="section-y bg-primary/5 border-y border-primary/15">
+        <div className="container-x grid lg:grid-cols-[1fr_auto] gap-8 items-center">
+          <div>
+            <div className="text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-4">
+              Pickup
+            </div>
+            <h2 className="text-2xl md:text-[2rem] font-bold text-foreground leading-tight mb-4">
+              駐車場出入口の事故を「光・音・文字」で防ぐ<br className="hidden md:block" />
+              回転灯 安全報知システム
+            </h2>
+            <p className="text-muted-foreground leading-relaxed max-w-2xl">
+              年間100件以上のお問い合わせ。出庫車両のみを検知するプランから、機器のみの全国販売まで。現地調査・据付・電気工事までワンストップで承ります。
+            </p>
+          </div>
+          <LinkButton to="/kaiten" size="lg" withArrow>
+            回転灯システムを見る
+          </LinkButton>
+        </div>
+      </section>
+
+
+
       {/* 選ばれる理由 */}
       <section className="section-y bg-surface">
         <div className="container-x">
